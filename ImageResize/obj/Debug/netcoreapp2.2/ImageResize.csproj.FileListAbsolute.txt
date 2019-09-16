@@ -1,0 +1,11 @@
+D:\Projects\ImageResize\ImageResize\ImageResize\bin\Debug\netcoreapp2.2\ImageResize.deps.json
+D:\Projects\ImageResize\ImageResize\ImageResize\bin\Debug\netcoreapp2.2\ImageResize.runtimeconfig.json
+D:\Projects\ImageResize\ImageResize\ImageResize\bin\Debug\netcoreapp2.2\ImageResize.runtimeconfig.dev.json
+D:\Projects\ImageResize\ImageResize\ImageResize\bin\Debug\netcoreapp2.2\ImageResize.dll
+D:\Projects\ImageResize\ImageResize\ImageResize\bin\Debug\netcoreapp2.2\ImageResize.pdb
+D:\Projects\ImageResize\ImageResize\ImageResize\obj\Debug\netcoreapp2.2\ImageResize.csprojAssemblyReference.cache
+D:\Projects\ImageResize\ImageResize\ImageResize\obj\Debug\netcoreapp2.2\ImageResize.csproj.CoreCompileInputs.cache
+D:\Projects\ImageResize\ImageResize\ImageResize\obj\Debug\netcoreapp2.2\ImageResize.AssemblyInfoInputs.cache
+D:\Projects\ImageResize\ImageResize\ImageResize\obj\Debug\netcoreapp2.2\ImageResize.AssemblyInfo.cs
+D:\Projects\ImageResize\ImageResize\ImageResize\obj\Debug\netcoreapp2.2\ImageResize.dll
+D:\Projects\ImageResize\ImageResize\ImageResize\obj\Debug\netcoreapp2.2\ImageResize.pdb
