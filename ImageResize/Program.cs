@@ -21,6 +21,7 @@ namespace ImageResize {
                 if (imageFiles.Contains(Path.GetExtension(file).ToUpperInvariant())) {
                     Console.WriteLine("is image: " + Path.GetExtension(file));
                     Image newImg = ResizeImage(file);
+                    newImg.Save(@"D:\Temp\test.png", ImageFormat.Png);
                 } else {
                     Console.WriteLine("nope");
                 }
@@ -83,6 +84,7 @@ namespace ImageResize {
             // Instantiate a new blank bitmap and set its resolution
             Bitmap bmp = new Bitmap(desiredX, desiredY, PixelFormat.Format24bppRgb);
             bmp.SetResolution(img.HorizontalResolution, img.VerticalResolution);
+            bmp.MakeTransparent();
 
             Graphics graphics = Graphics.FromImage(bmp);
             graphics.Clear(Color.Transparent);
