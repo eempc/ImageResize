@@ -32,8 +32,8 @@ namespace ImageResize {
                     Image newImg = ResizeImage(file);
                     //ImageFormat imgFormat = ParseImageFormat(ext);
 
-                    string saveFile = $"{fileName} {date}" + ".gif";
-                    newImg.Save(saveFile, ImageFormat.Gif);
+                    string saveFile = $"{fileName} {date}" + ".png";
+                    newImg.Save(saveFile, ImageFormat.Png);
                     newImg.Dispose();
                 } else {
                     Console.WriteLine("nope");
