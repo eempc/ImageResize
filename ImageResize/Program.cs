@@ -5,13 +5,17 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
+using System.Linq;
+using System.Reflection;
 
 namespace ImageResize {
     class Program {
+        static List<string> imageFiles = new List<string> { ".JPG", ".PNG", ".GIF", ".BMP" };
+
         static void Main(string[] args) {
             Console.WriteLine("Hello World!");
 
-            List<string> imageFiles = new List<string> { ".JPG", ".PNG", ".GIF", ".BMP" };
+            string date = DateTime.Now.ToString("yyyy-mm-dd");
 
             string targetFolder = Directory.GetCurrentDirectory();
             string[] fileEntries = Directory.GetFiles(targetFolder);
@@ -19,19 +23,39 @@ namespace ImageResize {
             foreach (string file in fileEntries) {
                 Console.WriteLine(file);
                 if (imageFiles.Contains(Path.GetExtension(file).ToUpperInvariant())) {
-                    Console.WriteLine("is image: " + Path.GetExtension(file));
+
+                    string fileName = Path.GetFileNameWithoutExtension(file);
+                    string ext = Path.GetExtension(file);
+
+                    Console.WriteLine("is image: " + ext);
+
                     Image newImg = ResizeImage(file);
-                    newImg.Save(@"D:\Temp\test.png", ImageFormat.Png);
+                    ImageFormat imgFormat = ParseImageFormat(ext);
+
+                    string saveFile = $"{fileName} {date}{ext}";
+                    newImg.Save(saveFile, imgFormat);
+                    newImg.Dispose();
                 } else {
                     Console.WriteLine("nope");
                 }
             }
 
+            //Console.Read();
+        }
 
+        public static ImageFormat ParseImageFormat(string ext) {
+            if (!imageFiles.Contains(ext.ToUpper())) {
+                throw new ArgumentException(ext + " is not a valid image format");
+            } else {
 
+                return (ImageFormat)typeof(ImageFormat)
+                    .GetProperty(RemoveDotFirstCharUpper(ext), BindingFlags.Public | BindingFlags.Static | BindingFlags.IgnoreCase)
+                    .GetValue(null);
+            }
+        }
 
-
-            Console.Read();
+        public static string RemoveDotFirstCharUpper(string str) {
+            return char.ToUpper(str[1]) + str.Substring(2);
         }
 
         public static Image ResizeImage(string file, int desiredX = 1920, int desiredY = 1080) {
@@ -98,11 +122,6 @@ namespace ImageResize {
             return bmp;
 
 
-        }
-
-        public string[] GetFiles(string directory) {
-            string[] fileEntries = Directory.GetFiles(directory);
-            return fileEntries;
         }
     }
 }
