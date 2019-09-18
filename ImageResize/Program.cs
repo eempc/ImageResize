@@ -1,21 +1,19 @@
 ﻿using System;
-using System.IO;
-using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
-using System.Linq;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Reflection;
 
 namespace ImageResize {
     class Program {
-        static List<string> imageFiles = new List<string> { ".JPG", ".PNG", ".GIF", ".BMP" };
+        static List<string> imageFiles = new List<string> { ".JPEG", ".PNG", ".GIF", ".BMP", ".JPG" };
 
         static void Main(string[] args) {
             Console.WriteLine("Hello World!");
 
-            string date = DateTime.Now.ToString("yyyy-mm-dd");
+            string date = DateTime.Now.ToString("yyyy-MM-dd");
 
             string targetFolder = Directory.GetCurrentDirectory();
             string[] fileEntries = Directory.GetFiles(targetFolder);
@@ -26,6 +24,10 @@ namespace ImageResize {
 
                     string fileName = Path.GetFileNameWithoutExtension(file);
                     string ext = Path.GetExtension(file);
+
+                    if (ext.ToLower() == ".jpg") {
+                        ext = ".Jpeg";
+                    }
 
                     Console.WriteLine("is image: " + ext);
 
@@ -47,7 +49,6 @@ namespace ImageResize {
             if (!imageFiles.Contains(ext.ToUpper())) {
                 throw new ArgumentException(ext + " is not a valid image format");
             } else {
-
                 return (ImageFormat)typeof(ImageFormat)
                     .GetProperty(RemoveDotFirstCharUpper(ext), BindingFlags.Public | BindingFlags.Static | BindingFlags.IgnoreCase)
                     .GetValue(null);
