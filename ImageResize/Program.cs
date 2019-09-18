@@ -25,24 +25,20 @@ namespace ImageResize {
                     string fileName = Path.GetFileNameWithoutExtension(file);
                     string ext = Path.GetExtension(file);
 
-                    if (ext.ToLower() == ".jpg") {
-                        ext = ".Jpeg";
-                    }
-
+                    //if (ext.ToLower() == ".jpg") ext = ".Jpeg";
+                  
                     Console.WriteLine("is image: " + ext);
 
                     Image newImg = ResizeImage(file);
-                    ImageFormat imgFormat = ParseImageFormat(ext);
+                    //ImageFormat imgFormat = ParseImageFormat(ext);
 
-                    string saveFile = $"{fileName} {date}{ext}";
-                    newImg.Save(saveFile, imgFormat);
+                    string saveFile = $"{fileName} {date}" + ".gif";
+                    newImg.Save(saveFile, ImageFormat.Gif);
                     newImg.Dispose();
                 } else {
                     Console.WriteLine("nope");
                 }
             }
-
-            //Console.Read();
         }
 
         public static ImageFormat ParseImageFormat(string ext) {
