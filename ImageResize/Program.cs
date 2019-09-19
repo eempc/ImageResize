@@ -36,7 +36,7 @@ namespace ImageResize {
                     newImg.Save(saveFile, ImageFormat.Png);
                     newImg.Dispose();
                 } else {
-                    Console.WriteLine("nope");
+                    Console.WriteLine("nope, not image");
                 }
             }
         }
