@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\ImageResize\\ImageResize\\ImageResize\\ImageResize.csproj": {}
+    "C:\\Projects\\ImageResizer\\ImageResize\\ImageResize\\ImageResize.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\ImageResize\\ImageResize\\ImageResize\\ImageResize.csproj": {
+    "C:\\Projects\\ImageResizer\\ImageResize\\ImageResize\\ImageResize.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\ImageResize\\ImageResize\\ImageResize\\ImageResize.csproj",
+        "projectUniqueName": "C:\\Projects\\ImageResizer\\ImageResize\\ImageResize\\ImageResize.csproj",
         "projectName": "ImageResize",
-        "projectPath": "D:\\Projects\\ImageResize\\ImageResize\\ImageResize\\ImageResize.csproj",
+        "projectPath": "C:\\Projects\\ImageResizer\\ImageResize\\ImageResize\\ImageResize.csproj",
         "packagesPath": "C:\\Users\\Evie\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\ImageResize\\ImageResize\\ImageResize\\obj\\",
+        "outputPath": "C:\\Projects\\ImageResizer\\ImageResize\\ImageResize\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
@@ -42,22 +42,6 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "dependencies": {
-            "ImageProcessor": {
-              "target": "Package",
-              "version": "[2.7.0.100, )"
-            },
-            "Microsoft.NETCore.App": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.2.0, )",
-              "autoReferenced": true
-            },
-            "System.Drawing.Common": {
-              "target": "Package",
-              "version": "[4.5.1, )"
-            }
-          },
           "imports": [
             "net461"
           ],
